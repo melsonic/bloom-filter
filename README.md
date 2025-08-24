@@ -4,8 +4,6 @@ Bloom filters are powerful probabilistic data structure to detect the present of
 
 A bloom filter can predict absence of an item with 100% surity. However, sometimes it results into false positives. The % of false positives depends on the value of other parameters to be discussed below.  
 
----
-
 ## Properties of a Bloom Filter  
 
 There are 4 key properties to construct a probabilistic bloom filter:  
@@ -24,8 +22,6 @@ $P_{fp} = \left(1 - e^{-\frac{k n}{m}}\right)^k$
 - for constant *m* & *k*, as *n* increases, value of *p* also increases.  
 - for constant *n* & *k*, as *m* increases, value of *p* decreases.  
 
----
-
 ## Bloom Filter Operations  
 
 ### Adding an Item  
@@ -33,8 +29,6 @@ When we add an item to a bloom filter, it runs a series of predefined hash funct
 Let's call them i1, i2, i3, … etc.  
 
 Now, we take the modulo of each number wrt *m* (number of bits). Based on the result, the corresponding bit is turned on in the bloom filter source bit array.  
-
----
 
 ### Searching an Item  
 When we search for an element in a bloom filter, it runs the same series of hahs function to generate the unique numbers and take their modulo wrt *m*.  
